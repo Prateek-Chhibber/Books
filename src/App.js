@@ -8,7 +8,10 @@ function App (){
     const handleCreateBook = (title) => {
         const updatedBooks = [
             ...books,
-            { id: 123, title }
+            { 
+                id: Math.round(Math.random() * 100),
+                title 
+            }
         ]
         setBooks(updatedBooks)
     }
