@@ -1,17 +1,16 @@
 import { useState } from "react"
 
-function BookEdit({ book }) {
+function BookEdit({ book, onSubmit }) {
 
-    // const titleOfBook = props
     const [title, setTitle] = useState(book.title)
-    console.log('props are ', book)
+    // console.log('props are ', book)
     const handleChange = (event) => {
         setTitle(event.target.value)
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log('New title is ', title)
+        onSubmit(book.id, title)
     }
     return (
     <form onSubmit={handleSubmit} className="book-edit">
