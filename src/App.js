@@ -34,10 +34,13 @@ function App (){
         setBooks(updatedBooks)
     }
 
-    return <div className='app'>
+    return (
+    <div className='app'>
+        <h1>Reading List</h1>
         <BookList onEdit={editBookById} books={books} onDelete={deleteBookById} />
-         <BookCreate onCreate={handleCreateBook} />
+        <BookCreate onCreate={handleCreateBook} />
     </div>
+    )
 }
 
 export default App
