@@ -6,6 +6,13 @@ function App (){
     // It will display all books at a given time
     const [books, setBooks] = useState([])
 
+    const deleteBookById = (id) => {
+        const updatedBooks = books.filter((book) => {
+            return book.id !== id
+        })
+        setBooks(updatedBooks)
+    } 
+
     const handleCreateBook = (title) => {
         const updatedBooks = [
             ...books,
@@ -18,7 +25,7 @@ function App (){
     }
 
     return <div className='app'>
-        <BookList books={books} />
+        <BookList books={books} onDelete={deleteBookById} />
          <BookCreate onCreate={handleCreateBook} />
     </div>
 }
