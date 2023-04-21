@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import BookCreate from './components/BookCreate'
+import BookList from './components/BookList'
 
 function App (){
     // It will display all books at a given time
@@ -16,8 +17,8 @@ function App (){
         setBooks(updatedBooks)
     }
 
-    return <div>
-        {books.length}
+    return <div className='app'>
+        <BookList books={books} />
          <BookCreate onCreate={handleCreateBook} />
     </div>
 }
